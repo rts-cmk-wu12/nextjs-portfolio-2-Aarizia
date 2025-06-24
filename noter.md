@@ -1,0 +1,1 @@
+størrelse ikoner (path mv) brug size attr
