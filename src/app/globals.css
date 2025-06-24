@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background-dark: #080808;
+  --background-medium: #1b1b1b;
+  --foreground-light: #fff;
+  --foreground-dark: #757575;
+  --foreground-medium: #9c9c9c;
+  --accent-light: #62BA1B;
+  --accent-dark: #3F8E00;
+
+  --box-shadow: 0 0 0 10px var(--accent-dark);
+}
+
+@theme inline {
+  --color-background-dark: var(--background-dark);
+  --color-background-medium: var(--background-medium);
+  --color-foreground-light: var(--foreground-light);
+  --color-foreground-dark: var(--foreground-dark);
+  --color-foreground-medium: var(--foreground-medium);
+  --color-accent-light: var(--accent-light);
+  --color-accent-dark: var(--accent-dark);
+}
+
+body {
+  --heading-font: var(--font-raleway);
+  --text-font: var(--font-ibm-plex-mono);
+  
+  background: var(--background-dark);
+  color: var(--foreground-medium);
+  font-family: var(--text-font);
+
+  display: grid;
+  grid-template-areas: 
+      'header'
+      'main'
+      'footer'
+  ;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  font-size: 0.875rem;
+  min-width: 19rem;
+  
+  
+  header {
+    grid-area: header;
+    background: var(--background-medium);
+  }
+  
+  main {
+    grid-area: main;
+    overflow: auto;
+    scroll-behavior: smooth;
+    width: 71.88%;
+    margin: 0 auto;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    color: var(--foreground-light);
+    font-weight: bold;
+  }
+
+  footer {
+    grid-area: footer;
+    background: var(--background-medium);
+  }
+
+  .line-break {
+    display: block;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input, textarea {
+    background-color: var(--foreground-light);
+    color: var(--foreground-dark);
+    border-radius: 0.375rem;
+    padding: 0.75rem;
+    font-size: 0.75rem;
+    
+    ::placeholder {
+      color: var(--foreground-dark);
+    }
+  }
+}
+
